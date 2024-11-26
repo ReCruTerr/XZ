@@ -185,8 +185,6 @@
             </article>
         </section>
     </main>
-    <h1>QR Code Generator</h1>
-    <div id="qrcode"></div>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             // Add hover sound effect to contact buttons
@@ -214,16 +212,6 @@
                     this.style.transform = `rotate(${rotation}deg)`;
                 });
             });
-        });
-
-        // Generate QR code
-        const qrcode = new QRCode(document.getElementById("qrcode"), {
-            text: 'https://recruterr.github.io/XZ/',
-            width: 128,
-            height: 128,
-            colorDark: "#000000",
-            colorLight: "#ffffff",
-            correctLevel: QRCode.CorrectLevel.H
         });
     </script>
 </body>
