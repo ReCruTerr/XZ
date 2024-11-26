@@ -1,0 +1,215 @@
+<html><head><base href="https://yrosportfolio.web.app/" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Meme Portfolio</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Inter', sans-serif;
+    }
+
+    body {
+        background: #f5f5f5;
+        color: #333;
+        line-height: 1.6;
+    }
+
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 2rem;
+    }
+
+    header {
+        background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+        color: white;
+        padding: 2rem 0;
+        text-align: center;
+        animation: gradientBG 15s ease infinite;
+    }
+
+    @keyframes gradientBG {
+        0% { background-position: 0% 50%; }
+        50% { background-position: 100% 50%; }
+        100% { background-position: 0% 50%; }
+    }
+
+    .profile-section {
+        display: flex;
+        align-items: center;
+        gap: 2rem;
+        margin: 3rem 0;
+        flex-wrap: wrap;
+    }
+
+    .profile-image {
+        width: 300px;
+        height: 300px;
+        border-radius: 50%;
+        object-fit: cover;
+        transition: transform 0.3s;
+    }
+
+    .profile-image:hover {
+        transform: rotate(360deg);
+    }
+
+    .meme-gif {
+        width: 100%;
+        max-width: 300px;
+        border-radius: 10px;
+        margin: 1rem 0;
+    }
+
+    .contact-links {
+        margin: 2rem 0;
+        display: flex;
+        gap: 1rem;
+        justify-content: center;
+    }
+
+    .contact-button {
+        padding: 1rem 2rem;
+        background: #3498db;
+        color: white;
+        text-decoration: none;
+        border-radius: 5px;
+        transition: all 0.3s;
+    }
+
+    .contact-button:hover {
+        background: #2980b9;
+        transform: scale(1.1);
+    }
+
+    .qr-section {
+        text-align: center;
+        margin: 2rem 0;
+    }
+
+    .projects {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+        margin: 3rem 0;
+    }
+
+    .project-card {
+        background: white;
+        padding: 1rem;
+        border-radius: 10px;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        transition: transform 0.3s;
+    }
+
+    .project-card:hover {
+        transform: translateY(-10px);
+    }
+
+    .project-image {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+        border-radius: 5px;
+    }
+
+    @media (max-width: 768px) {
+        .profile-section {
+            flex-direction: column;
+            text-align: center;
+        }
+    }
+</style>
+</head>S
+    <header>
+        <div class="container">
+            <h1>Meme Lord's Portfolio</h1>
+            <p>Web Developer & Meme Enthusiast</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="profile-section">
+            <div>
+                <h2>About Me</h2>
+                <p>👋 Hey there! I'm not just your average developer - I'm a meme connoisseur who happens to write code! When I'm not crafting beautiful websites, I'm probably making programming memes or watching cat videos.</p>
+                <img class="meme-gif" 
+                     alt="Funny coding meme gif showing a programmer debugging" 
+                     src="https://media.giphy.com/media/hrRJ41JB2zlgZiYcCw/giphy.gif" 
+                     width="300" 
+                     height="200">
+            </div>
+        </section>
+
+        <section class="contact-links">
+            <a href="tel:+1234567890" class="contact-button">📞 Call Me Maybe</a>
+            <a href="mixailbaz@yandex.ru" class="contact-button">✉️ Send Memes</a>
+        </section>
+
+        <section class="projects">
+            <article class="project-card">
+                <img class="project-image" 
+                     alt="Funny gif showing computer errors" 
+                     src="https://media.giphy.com/media/YFkpsHWCsNUUo/giphy.gif" 
+                     width="300" 
+                     height="200">
+                <h3>Bug-Free Code™</h3>
+                <p>Just kidding! But I do write pretty decent code when the coffee kicks in.</p>
+            </article>
+
+            <article class="project-card">
+                <img class="project-image" 
+                     alt="Cat typing on keyboard gif" 
+                     src="https://media.giphy.com/media/JIX9t2j0ZTN9S/giphy.gif" 
+                     width="300" 
+                     height="200">
+                <h3>My Coding Assistant</h3>
+                <p>Meet my junior developer. Sometimes breaks production, but too cute to fire!</p>
+            </article>
+
+            <article class="project-card">
+                <img class="project-image" 
+                     alt="Matrix code raining effect gif" 
+                     src="https://media.giphy.com/media/ZVik7pBtu9dNS/giphy.gif" 
+                     width="300" 
+                     height="200">
+                <h3>When I'm "In The Zone"</h3>
+                <p>Reality can be whatever I want it to be when I'm coding!</p>
+            </article>
+        </section>
+    </main>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add hover sound effect to contact buttons
+            const buttons = document.querySelectorAll('.contact-button');
+            buttons.forEach(button => {
+                button.addEventListener('mouseenter', () => {
+                    const audio = new Audio('https://www.soundjay.com/button/button-1.mp3');
+                    audio.play().catch(e => console.log('Audio play failed:', e));
+                });
+            });
+
+            // Add loading animation for images
+            const images = document.querySelectorAll('img');
+            images.forEach(img => {
+                img.addEventListener('load', function() {
+                    this.style.animation = 'fadeIn 0.5s';
+                });
+            });
+
+            // Add random rotation to meme gifs on click
+            const memeGifs = document.querySelectorAll('.meme-gif');
+            memeGifs.forEach(gif => {
+                gif.addEventListener('click', function() {
+                    const rotation = Math.random() * 360;
+                    this.style.transform = `rotate(${rotation}deg)`;
+                });
+            });
+        });
+
+    </script>
+</body>
+</html>
